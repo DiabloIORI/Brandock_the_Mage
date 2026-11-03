@@ -265,7 +265,7 @@ IF ~Global("C#Brandock_Shapeshift","GLOBAL",6)
 Global("C#Br_HalfogrePhilosophy","LOCALS",0)~ THEN c#brandP who_am_i
 @1248 /* ~Who am I? I am... I mean, theoretically speaking, I *was* the different acquaintance of another polymorphial being of very little intellectual habitus, if phrased in terms of principally conditions...~ */
 DO ~SetGlobal("C#Br_HalfogrePhilosophy","LOCALS",1)~
-== c#brhao2 @1249 = ~He not speak clear. He dumb, with my brain! Me... bright, with his dumb brain! And clumsy hands... Need help!~
+== c#brhao2 @1249 = ~他说话不清楚。他笨，用我的脑子！我……聪明，用他的笨脑子！还有笨手……需要帮助！~
 END
 
 APPEND c#brandP
@@ -554,7 +554,7 @@ ActionOverride("C#BRRANG",EscapeAreaDestroy(5))~ EXIT
 /* visit to Thalantyr */
 /* -Brandock fragt Thalantyr zwei Sachen: 
 1. ist es heilbar?
-2. verwandle ich mich f�r immer? Oder kann ich mich f�r immer verwandeln, wenn ich nicht aufpasse? */
+2. verwandle ich mich f r immer? Oder kann ich mich f r immer verwandeln, wenn ich nicht aufpasse? */
 
 EXTEND_BOTTOM ~THALAN~ 1 
 + ~Global("C#Brandock_Shapeshift","GLOBAL",19)
@@ -859,7 +859,7 @@ IF ~~ THEN c#brandj hello_brandock_08
 == c#brandj @1474
 == c#brhabr @1475
 END
-/* -> Halfoger r�umt sein Lager in der Wildnis und geht in den Tempel des Morgenf�rsten bei Beregost. */
+/* -> Halfoger r umt sein Lager in der Wildnis und geht in den Tempel des Morgenf rsten bei Beregost. */
 IF ~~ THEN DO ~EraseJournalEntry(@10073)
 SetGlobal("C#Brando_VisitedMalm","GLOBAL",2)
 ActionOverride("c#brhabr",EscapeAreaMove("%Temple_SongoftheMorning%",508,183,0))~ UNSOLVED_JOURNAL @10074 EXIT

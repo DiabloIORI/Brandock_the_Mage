@@ -69,7 +69,7 @@ This sets Global("C#Brandock_kicked_bd4700","global",1) which is used in bdcut59
 /* Brandock can't go home from here - so he will stay and say something brave. */
 IF ~AreaCheck("bd4700")
     GlobalLT("bd_plot","global",570)~ THEN BEGIN kickout_sod_avernus
-  SAY ~I, er, I'll stay nearby, alright?~
+  SAY ~我，呃，我就在附近待着，可以吗？~
   IF ~~ THEN DO ~SetGlobal("C#BrandockJoined","GLOBAL",0)
 SetGlobal("C#Brandock_kicked_bd4700","global",1)
                  SetGlobal("bd_joined","locals",0)~ EXIT
@@ -99,13 +99,13 @@ OR(2)
 !AreaCheck("BD0130")~ + @16 /* ~Please wait here.~ */ + kickout_01
 + ~OR(2)
 AreaCheck("BD0120")
-AreaCheck("BD0130")~ + ~Wait at the entrance of the crypt.~ + kickout_sod_korlaszcrypt
+AreaCheck("BD0130")~ + ~在墓穴入口处等候。~ + kickout_sod_korlaszcrypt
 + ~GlobalGT("bd_npc_camp_chapter","global",1)
 GlobalLT("bd_npc_camp_chapter","global",5)
 OR(2)
 !Range("ff_camp",999)
 %NextTriggerObject_ff_camp%
-!IsOverMe("C#Brandock")~ + ~I want you to go back to the camp. I'll come and find you later.~ DO ~SetGlobal("bd_npc_camp","locals",1)~ + kickout_camp_sod
+!IsOverMe("C#Brandock")~ + ~你回营地去吧，我稍后会去找你。~ DO ~SetGlobal("bd_npc_camp","locals",1)~ + kickout_camp_sod
 
 /* BG1 farewell - Brandock will only be in BGII if his possessions where found */
 + ~%BG1_BEFORE_TRANSITION%~ + @18 /* ~Brandock, it's been great and all, but I don't need you any more.~ */ + farewell
@@ -121,7 +121,7 @@ OR(2)
 END
 
 IF ~~ THEN kickout_sod_korlaszcrypt
-  SAY ~Very well.~
+  SAY ~很好。~
   IF ~Global("C#BRIH","GLOBAL",0) 
 ~ THEN DO ~SetGlobal("C#BrandockJoined","GLOBAL",0)
 SetGlobal("C#BrandockSpawn","GLOBAL",7)
@@ -135,7 +135,7 @@ EscapeAreaMove("bd0120",956,1670,14)
 END
 
 IF ~~ THEN BEGIN kickout_camp_sod
-SAY ~I will be there.~
+SAY ~我会在那儿等你。~
 IF ~Global("C#BRIH","GLOBAL",0) 
 ~ THEN DO ~SetGlobal("C#BrandockJoined","GLOBAL",0)~ EXIT
 IF ~Global("C#BRIH","GLOBAL",1)~ THEN DO ~ApplySpellRES("C#BRSHNF",Myself) SetGlobal("C#BrandockJoined","GLOBAL",0) SetGlobal("bd_joined","locals",0)~ EXIT
@@ -145,7 +145,7 @@ END
 /* BGII kickout dialogue */
 
 IF ~!InParty(Myself) Global("C#BrandockJoined","GLOBAL",1)~ THEN kickout
-SAY ~What do you need me to do?~
+SAY ~你要我做什么？~
 ++ @20 /* ~I just need you to make some room. Get in line behind me.~ */ + follow_companion
 ++ @16 /* ~Please wait here.~ */ + kickout_01
 ++ @19 /* ~My mistake - stay where you were.~ */ + kickout_02
@@ -217,7 +217,7 @@ END
 
 /* Brandock stays in the house */
 IF ~~ THEN return_to_house
-SAY ~Very well, I'll be at Ebrel's house... mixing and spilling substances.~
+SAY ~行，我去埃布雷尔家待着……捣鼓药剂，免不了洒些出来。~
 IF ~!AreaCheck("c#br03") Global("C#BRIH","GLOBAL",0)~ THEN DO ~SetGlobal("C#BrandockJoined","GLOBAL",0) 
 EscapeAreaMove("c#br03",390,250,0)~ JOURNAL @10015 EXIT
 IF ~AreaCheck("c#br03") Global("C#BRIH","GLOBAL",0)~ THEN DO ~SetGlobal("C#BrandockJoined","GLOBAL",0)~ JOURNAL @10015 EXIT
@@ -229,7 +229,7 @@ END
 
 /* Brandock stays in sphere with apprentices */
 IF ~~ THEN return_to_sphere
-SAY ~Very well, I'll be in the sphere, watching over my apprentices.~
+SAY ~很好，我就在法球里照看我的学徒们。~
 IF ~!See("MGAPPR02") Global("C#BRIH","GLOBAL",0)~ THEN DO ~SetGlobal("C#BrandockJoined","GLOBAL",0) 
 EscapeAreaMove("AR0411",210,1360,0)~ JOURNAL @10018 EXIT
 IF ~See("MGAPPR02") Global("C#BRIH","GLOBAL",0)~ THEN DO ~SetGlobal("C#BrandockJoined","GLOBAL",0)~ JOURNAL @10018 EXIT
