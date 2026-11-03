@@ -8,7 +8,7 @@ IF
 
 THEN
 	RESPONSE #100
-		RemoveSpellRES("c#brshnf","C#Brandock") 
+		RemoveSpellRES("c#brshnf") 
 		ReallyForceSpellRES("c#brsh01","C#Brandock")
 		SetGlobal("c#brisog","GLOBAL",0)
 END
